@@ -29,6 +29,7 @@ The plugin does not need any configuration or additional Add-Ons to play the vid
 ---
 
 **Use-Cases**
+
 * Learn how to use any of CM Plugins.
 * Learn how to use WordPress Plugins.
 * Learn how to use WordPress Advanced Features.
