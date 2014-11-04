@@ -1,0 +1,11 @@
+Paused	Paused	Status when the product is paused	General
+Published	Published	Status when the product is not paused	General
+
+view_details	View Details	Label for the "Product Info Link" button	Widget
+check_price	Check Price	Label for the "Product Purchase Link" when "showprice" is disabled	Widget
+add1_link	Additional Link One	Label for the "Additional Link One"	Widget
+add2_link	Additional Link Two	Label for the "Additional Link Two"	Widget
+add3_link	Additional Link Three	Label for the "Additional Link Three"	Widget
+add4_link	Additional Link Four	Label for the "Additional Link Four"	Widget
+new_label	New!	Product Label for the products marked as "New"	Widget
+buy_label	Buy -	Label for "Buy"	Widget
