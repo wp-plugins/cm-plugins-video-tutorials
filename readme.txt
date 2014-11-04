@@ -5,7 +5,7 @@ Donate link: http://plugins.cminds.com/
 Tags: answers,forum,questions,comments,question and answer,Question and Answer Forum,support forum,q&a,list,stackoverflow,stack overflow,stackoverflow answers,splunkbase,bbPress,board,boards,bulletin,bulletin board,bulletin boards,discussion,discussion board,discussion forums,discussions,simple forum,forum plugin,forums,message,message board,messages,messaging,user messages,threads,user forum,wordpress forum,wp,resolved topics,user rankings,post rating,rate,rating,customer service,customer support,community,embed,embedded forum,discussion group,website forum,community,conversation,discussions,message,network,notification,social,thread,topic,group,groups,support,video,tutorial,how-to,video tutorial,videos,youtube,glossary,tooltip,creativeminds
 Requires at least: 3.2
 Tested up to: 4.0.0
-Stable tag: 2.4.8
+Stable tag: 1.0.0
 
 Video Tutorials showing how to use WordPress and CM Plugins like Q&A Discussion Forum, Glossary, Download Manager, Ad Changer and more
 
