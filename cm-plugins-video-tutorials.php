@@ -3,7 +3,7 @@
   Plugin Name: CM Plugins Video Tutorials
   Plugin URI:https://plugins.cminds.com/cm-video-tutorials-for-wordpress/
   Description: Display a gallery of CM Plugins video tutorials in the WordpPress admin dashboard
-  Version: 1.0.0
+  Version: 1.0.1
   Author: CreativeMindsSolutions
   Author URI: https://www.cminds.com
  */

@@ -210,8 +210,8 @@ class CMPluginsVideoTutorialsBackend
             '822493' => 'CM Tooltip Glossary',
             '822491' => 'CM MicroPayments',
     //     '824469' => 'CM Product Catalog',
-    //        '824470' => 'CM OnBoarding',
-    //        '824471' => 'CM EDD Related Add-Ons',
+            '824470' => 'CM OnBoarding',
+            '824471' => 'CM EDD Related Add-Ons',
         );
 
         $currentChannel = self::getCurrentChannel();
