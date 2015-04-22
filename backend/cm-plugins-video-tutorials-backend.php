@@ -12,6 +12,8 @@ class CMPluginsVideoTutorialsBackend
     protected static $jsPath = NULL;
     protected static $viewsPath = NULL;
 
+    const PAGE_YEARLY_OFFER = 'https://www.cminds.com/store/cm-wordpress-plugins-yearly-membership/';
+
     public static function instance()
     {
         $class = __CLASS__;
@@ -52,9 +54,32 @@ class CMPluginsVideoTutorialsBackend
 
     public static function cmpvt_admin_menu()
     {
+        global $submenu;
+        
         add_menu_page('CM Plugins Video Tutorials', __('CM Plugins Video Tutorials', CMPVT_SLUG_NAME), 'read', CMPVT_SLUG_NAME, array(self::$calledClassName, 'cmpvt_render_page'));
         add_submenu_page(CMPVT_SLUG_NAME, 'About', __('About', CMPVT_SLUG_NAME), 'manage_options', CMPVT_SLUG_NAME . '-about', array(self::$calledClassName, 'cmpvt_render_page'));
 //        add_submenu_page(CMPVT_SLUG_NAME, 'User Guide', __('User Guide', CMPVT_SLUG_NAME), 'manage_options', CMPVT_SLUG_NAME . '-userguide', array(self::$calledClassName, 'cmpvt_render_page'));
+
+        if( current_user_can('manage_options') )
+        {
+            $submenu[CMPVT_SLUG_NAME][999] = array('Yearly membership offer', 'manage_options', self::PAGE_YEARLY_OFFER);
+            add_action('admin_head', array(__CLASS__, 'admin_head'));
+        }
+    }
+
+    public static function admin_head()
+    {
+        echo '<style type="text/css">
+        		#toplevel_page_'.CMPVT_SLUG_NAME.' a[href*="cm-wordpress-plugins-yearly-membership"] {color: white;}
+    			a[href*="cm-wordpress-plugins-yearly-membership"]:before {font-size: 16px; vertical-align: middle; padding-right: 5px; color: #d54e21;
+    				content: "\f487";
+				    display: inline-block;
+					-webkit-font-smoothing: antialiased;
+					font: normal 16px/1 \'dashicons\';
+    			}
+    			#toplevel_page_'.CMPVT_SLUG_NAME.' a[href*="cm-wordpress-plugins-yearly-membership"]:before {vertical-align: bottom;}
+
+        	</style>';
     }
 
     public static function cmpvt_render_page()
@@ -181,7 +206,7 @@ class CMPluginsVideoTutorialsBackend
         $output = '';
 
         $pagination_args = array(
-            'base'       => add_query_arg('pg', '%#%'),
+            'base'       => esc_url(add_query_arg('pg', '%#%')),
             'format'     => '',
             'total'      => $atts['max_pg'],
             'current'    => max(1, $atts['pg']),
@@ -209,7 +234,7 @@ class CMPluginsVideoTutorialsBackend
             '822492' => 'CM Ad Changer',
             '822493' => 'CM Tooltip Glossary',
             '822491' => 'CM MicroPayments',
-    //     '824469' => 'CM Product Catalog',
+            //     '824469' => 'CM Product Catalog',
             '824470' => 'CM OnBoarding',
             '824471' => 'CM EDD Related Add-Ons',
         );

@@ -365,7 +365,7 @@ if( !function_exists('tle_paginate_links') )
         if( $prev_next && $current && 1 < $current ) :
             $link = str_replace('%_%', 2 == $current ? '' : $format, $base);
             $link = str_replace('%#%', $current - 1, $link);
-            if( $add_args ) $link = add_query_arg($add_args, $link);
+            if( $add_args ) $link = esc_url(add_query_arg($add_args, $link));
             $link .= $add_fragment;
 
             /**
@@ -385,7 +385,7 @@ if( !function_exists('tle_paginate_links') )
                 if( $show_all || ( $n <= $end_size || ( $current && $n >= $current - $mid_size && $n <= $current + $mid_size ) || $n > $total - $end_size ) ) :
                     $link = str_replace('%_%', 1 == $n ? '' : $format, $base);
                     $link = str_replace('%#%', $n, $link);
-                    if( $add_args ) $link = add_query_arg($add_args, $link);
+                    if( $add_args ) $link = esc_url(add_query_arg($add_args, $link));
                     $link .= $add_fragment;
 
                     /** This filter is documented in wp-includes/general-template.php */
@@ -400,7 +400,7 @@ if( !function_exists('tle_paginate_links') )
         if( $prev_next && $current && ( $current < $total || -1 == $total ) ) :
             $link = str_replace('%_%', $format, $base);
             $link = str_replace('%#%', $current + 1, $link);
-            if( $add_args ) $link = add_query_arg($add_args, $link);
+            if( $add_args ) $link = esc_url(add_query_arg($add_args, $link));
             $link .= $add_fragment;
 
             /** This filter is documented in wp-includes/general-template.php */

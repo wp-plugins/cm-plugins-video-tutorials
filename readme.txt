@@ -3,9 +3,9 @@ Name: CM Plugins Video Tutorials
 Contributors: CreativeMindsSolutions
 Donate link: http://plugins.cminds.com/
 Tags: guides,guide,education,training,workshop,webshop,elearning,e-learning,WordPress tutorials,WP tutorial,learn,help,screencast,video,videos,answers,forum,questions,comments,question and answer,Question and Answer Forum,support forum,q&a,list,stackoverflow,stack overflow,stackoverflow answers,splunkbase,bbPress,board,boards,bulletin,bulletin board,bulletin boards,discussion,discussion board,discussion forums,discussions,simple forum,forum plugin,forums,message,message board,messages,messaging,user messages,threads,user forum,wordpress forum,wp,resolved topics,user rankings,post rating,rate,rating,customer service,customer support,community,embed,embedded forum,discussion group,website forum,community,conversation,discussions,message,network,notification,social,thread,topic,group,groups,support,video,tutorial,tutorials,how-to,video tutorial,videos,youtube,glossary,tooltip,creativeminds
-Requires at least: 3.2
-Tested up to: 4.1
-Stable tag: 1.0.1
+Requires at least: 3.9
+Tested up to: 4.2
+Stable tag: 1.0.2
 
 Video Tutorials showing how to use WordPress and CM Plugins like Q&A Discussion Forum, Glossary, Download Manager, Ad Changer and more
 
