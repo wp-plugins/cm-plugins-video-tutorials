@@ -1,0 +1,78 @@
+<?php
+/**
+ * Videos page
+ *
+ * @author CreativeMinds
+ * @copyright Copyright (c) 2014, CreativeMinds
+ * @package Glossary/View
+ */
+?>
+
+<div>
+    <div>
+
+    </div>
+
+    <div>
+        <?php
+        //
+        if( isset($error) )
+        {
+            echo '<div class="error">'.  CMPluginsVideoTutorials::__('There was a problem with the API request. Please try again (refresh the page)').'</div>';
+//            var_dump($error);
+        }
+        else
+        {
+            $atts = array();
+            $categories = CMPluginsVideoTutorialsBackend::outputCategories($atts);
+
+            if( !empty($results['body']) )
+            {
+                $atts = array(
+                    'max_pg' => ceil(intval($results['body']['total']) / $results['body']['per_page']),
+                    'pg'     => $results['body']['page']
+                );
+                $pagination = CMPluginsVideoTutorialsBackend::outputPagination($atts);
+
+                $button = CMPluginsVideoTutorialsBackend::outputButton($atts);
+
+                echo '<div class="videos">';
+
+                /*
+                 * Output the pagination
+                 */
+                echo $pagination;
+
+                echo $button;
+
+                echo $categories;
+
+                foreach($results['body']['data'] as $key => $video)
+                {
+                    echo '<div class="video">';
+                    echo '<h4>' . $video['name'] . '</h4>';
+                    $figureClass = '';
+                    $description = '';
+                    $videoId = str_replace('videos', 'video', $video['uri']);
+
+                    if( !empty($video['description']) )
+                    {
+                        $description = '<figcaption class="description">' . $video['description'] . '</figcaption>';
+                        $figureClass = 'has-description';
+                    }
+                    echo '<figure class="' . $figureClass . '">';
+                    echo $description;
+                    echo "<iframe id='player$key' src='//player.vimeo.com$videoId?api=1&amp;player_id=player$key' width='400' height='300' frameborder='0'></iframe>";
+                    echo '</figure>';
+                    echo '</div>';
+                }
+                echo '</div>';
+            }
+            else
+            {
+                echo $categories;
+            }
+        }
+        ?>
+    </div>
+</div>
